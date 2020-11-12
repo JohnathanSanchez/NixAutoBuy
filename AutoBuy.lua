@@ -1,6 +1,6 @@
 ui.add_checkbox("AutoBuy", "b_autobuy", false)
 
-ui.add_combo("Primary", "b_primary", { "NONE", "AWP", "AUTO", "SCOUT", "AK47/M4A4", "AUG/SG553", "FAMAS/GALIL", "MAG7/SAWED OFF", "NOVA", "M249", "XM1014", "NEGEV", "MAC10/MP9", "MP7", "MP5", "PP-BIZON"},  0)
+ui.add_combo("Primary", "b_primary", { "NONE", "AWP", "AUTO", "SCOUT", "AK47/M4A4", "AUG/SG553", "FAMAS/GALIL", "MAG7/SAWED OFF", "NOVA", "M249", "XM1014", "NEGEV", "MAC10/MP9", "MP7", "MP5", "PP-BIZON", "UMP-45", "P90"},  0)
 ui.add_combo("Secondary", "b_secondary", { "NONE", "DEAGLE/R8", "DUALIES", "P250", "FIVESEVEN/TEC9/CZ75"},  0)
 
 
@@ -81,6 +81,14 @@ local function buy_bot(event)
     
     if ui.get_int("b_primary") == 15 then
         engine.execute_client_cmd("buy bizon")
+    end
+
+    if ui.get_int("b_primary") == 16 then
+        engine.execute_client_cmd("buy ump45")
+    end
+    
+    if ui.get_int("b_primary") == 17 then
+        engine.execute_client_cmd("buy p90")
     end
     
     if ui.get_int("b_secondary") == 0 then
